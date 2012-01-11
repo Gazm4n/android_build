@@ -613,7 +613,7 @@ function eat()
     if [ "$OUT" ] ; then
         REALDATE=`sed -n -r 's/ro.build.version.incremental=//p' $OUT/system/build.prop`
         DATE6=`date +"%y%m%d"`
-        MODVERSION=`sed -n -e'/ro\.modversion/s/^.*CyanogenMod-//p' $OUT/system/build.prop`
+        MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*CyanogenMod-//p' $OUT/system/build.prop`
         #MODVERSION=`echo $MODVERSION | sed -r 's/[0-9\.]{20}/'$REALDATE'/'`
         MODVERSION=`echo $MODVERSION | sed -r 's/[0-9]{8}/'$REALDATE'/'`
         #ZIPFILE=update-cm-$MODVERSION-signed.zip
